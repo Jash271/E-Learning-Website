@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>UserName:{{user.username}}</h2>
+    <h2>f_name:{{user.first_name}}</h2>
+    <h2>l_name:{{user.last_name}}</h2>
+    <h2>email:{{user.email}}</h2>
+    <h2>Bio:{{user.profile.Bio}}</h2>
+    
+    <h2>Work_sample:{{user.profile.Github_Link}}</h2>
+
+    <img scr="{{user.profile.Display_Pic.url}}" width="100px" height="100px">
+<br>
+<a href="{% url 'update_profile' %}">Update Profile</a>
+
+
+</body>
+</html>

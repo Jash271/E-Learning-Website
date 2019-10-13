@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {% for video in video %}
+    <a href="{{video.Video_Link}}">{{video.Video_Link}}</a>
+    <a href="{% url 'problem' video.id  %}">Practice Here</a>
+   <br>
+   <br>
+    {% endfor %}
+</body>
+</html>
