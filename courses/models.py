@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Tutor(models.Model):
     User_Ref=models.ForeignKey(User,on_delete=models.CASCADE)
     def __str(self):
-        return self.User_Ref
+        return self.User_Ref.username
 
 
 

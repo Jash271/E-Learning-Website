@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Publish Your Course</h1>
+    <form action="Published" method="POST">
+         {% csrf_token %}
+   Name <input type="text" name="Name" placeholder="Course_Name">
+   Desc <input type="text" name="Desc" placeholder="Course_Description">
+   Tag<input type="text" name="Tag" placeholder="Tag">
+
+  
+   
+   
+   <input type="submit">
+
+
+
+    </form>
+</body>
+</html>

@@ -11,5 +11,13 @@
     <a href ="{% url 'profile_view' %}">View Profile</a>
     <a href="{% url  'course_list' %}">View Courses</a>
     <a href="{% url 'Mycourses' %}">MyCourses</a>
+    {% if flag == 0 %}
+    <a href="{% url 'tutor' %}">Create Course,Become a tutor Now</a>
+    {% endif %}
+    {% if flag == 1 %}
+    <a href="{% url 'publish' %}">Publish Course</a>
+    <a href="{% url 'myPublication' %}">View Courses You have created</a>
+    {% endif %}
+
 </body>
 </html>

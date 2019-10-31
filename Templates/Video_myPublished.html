@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-   
+    
+    
+    <a href="{% url 'add_video'  %}">Add Video</a>
+ 
 </head>
+
 <body>
     <br>
     {% if flag == 0 %}
@@ -19,9 +23,9 @@
     
    
   
-    <a href="{% url 'problem' video.id  %}">Practice Here</a>
+    <a href="{% url 'problem_publish' video.id  %}">Add Practice Problem</a>
 
-  
+    
     
    <br>
    <br>

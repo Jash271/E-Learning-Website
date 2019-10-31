@@ -1,8 +1,9 @@
 from django.shortcuts import render,redirect
-
+from courses.models import Tutor
 from . forms import UserRegistrationForm 
 from django.contrib.auth.forms import  UserCreationForm
 from django.core.mail import send_mail
+import pdb
 # Create your views here.
 def register(request):
     if request.method=='POST':
@@ -16,4 +17,14 @@ def register(request):
  
 
 def home(request):
-    return render(request,'home.html')
+    flag=0
+    flag=Tutor.objects.filter(User_Ref=request.user).count()
+    
+    if (flag>0):
+        flag=1
+    else:
+        flag=0
+
+  
+   
+    return render(request,'home.html',{'flag':flag})
