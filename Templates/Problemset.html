@@ -10,6 +10,10 @@
     {% for problem in problem %}
     {{problem.Name}}<br>
     {{problem.Desc}}<br>
+    <a href ="{% url 'submit' problem.id %}">submit</a>" 
+    <a href ="{% url 'mysubmission' problem.id %}">View Your Submission</a>
     {% endfor %}
+    <br>
+    
 </body>
 </html>

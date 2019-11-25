@@ -1,10 +1,10 @@
 from django.shortcuts import render,redirect
 from django.views.generic import ListView,DetailView
-from . models import Course,Video,Practice,Tutor,Tag
+from . models import Course,Video,Practice,Tutor,Tag,Submission
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 import pdb
-from . forms import ContactForm,ProblemForm
+from . forms import ContactForm,ProblemForm,SolutionForm
 # Create your views here.
 def courses(request):
     course=Course.objects.all()
@@ -125,6 +125,35 @@ def video_add(request,obj_id):
     print(flag)
     print(video)
     return render(request,"Video_myPublished.html",{'video':video,'flag':flag})
+
+
+def submit(request,obj_id):
+    if request.method =='POST':
+        form=SolutionForm(request.POST,request.FILES)
+        if form.is_valid():
+            code_1=form.cleaned_data.get('Code')
+            print(code_1)
+            ref=Practice.objects.get(id=obj_id)
+            print(ref)
+            solution=Submission(Author=request.user,Problem_Ref=ref,Code=code_1)
+            solution.save()
+            return redirect('/home')
+    else :
+        form=SolutionForm()
+    return render (request,"Submission.html",{'form':form})
+
+def mysubmission(request,obj_id):
+    
+    q_set=Submission.objects.filter(Problem_Ref=obj_id,Author=request.user)
+    print(q_set)
+    return render(request,"mysubmission.html",{'q_set':q_set})
+    
+
+
+
+
+
+
 
 
     

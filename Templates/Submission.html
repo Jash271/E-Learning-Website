@@ -9,10 +9,10 @@
 </head>
 <body>
     <form method="POST" enctype="multipart/form-data">
+
         {% csrf_token %}
-        {{p_form|crispy}}
-        {{u_form|crispy}}
-        <button type="submit">submit</button>
-    </form>
+           {{form|crispy}}
+               <button type="submit">submit</button>
+       </form>
 </body>
 </html>

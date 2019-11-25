@@ -17,6 +17,9 @@ urlpatterns = [
     path('add_video',views.add_video,name='add_video'),
     path('problem_publish/<int:obj_id>',views.problem_publish,name='problem_publish'),
     path('video_add/<int:obj_id>',views.video_add,name='video_add'),
+    path('submit/<int:obj_id>',views.submit,name='submit'),
+    path('mysubmission<int:obj_id>',views.mysubmission,name="mysubmission"),
+
     
     
 
