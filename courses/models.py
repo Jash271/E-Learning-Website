@@ -4,8 +4,9 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Tutor(models.Model):
     User_Ref=models.ForeignKey(User,on_delete=models.CASCADE)
-    def __str(self):
+    def __str__(self):
         return self.User_Ref.username
+    
 
 
 
@@ -33,7 +34,7 @@ class Video(models.Model):
     Video_Link=models.URLField()
     DOP=models.DateTimeField(auto_now=True)
     Desc=models.TextField()
-    Course_ID=models.ForeignKey(Course,on_delete=models.CASCADE)
+    Course_ID=models.ForeignKey(Course,related_name='videos',on_delete=models.CASCADE)
     Author=models.ForeignKey(Tutor,on_delete=models.CASCADE)
 
     def __str__(self):
